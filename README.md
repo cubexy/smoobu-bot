@@ -1,4 +1,4 @@
-<h1 align="center">Smoobu Availability Monitor</h1>
+<h1 align="center">🏠Smoobu Availability Monitor</h1>
 <p align="center">
 <img alt="Python badge" src="https://shields.io/badge/Python-3776AB?logo=Python&logoColor=FFF&style=flat-square">
 </p>
