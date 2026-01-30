@@ -20,7 +20,7 @@ def load_config():
             "content": os.getenv("CONTENT"),
             "subtype": os.getenv("TEXT_SUBTYPE", "plain"),
             "subject": os.getenv("SUBJECT"),
-            "recipient": os.getenv("RECIPIENT"),
+            "recipient": os.getenv("RECIPIENT").split(", "),
             "sender": os.getenv("SENDER"),
             "host": os.getenv("SMTP_HOST"),
             "port": int(os.getenv("SMTP_PORT", 465)),
@@ -64,7 +64,7 @@ def send_mail(config):
         msg = MIMEText(config["content"], config["subtype"])
         msg['Subject'] = config["subject"]
         msg['From'] = config["sender"]
-        msg['To'] = config["recipient"]
+        msg['To'] = ", ".join(config["recipient"])
 
         conn = SMTP(config["host"], config["port"])
         conn.set_debuglevel(False)
